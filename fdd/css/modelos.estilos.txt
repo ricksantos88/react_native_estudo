@@ -1,0 +1,37 @@
+//Formatações 
+const Estilos = {
+  estiloTexto:{
+    fontSize: 30,
+    backgroundColor: '#08509B',
+    //color: '#FFFFFF',
+    //height: 60,
+    //width: 60,
+    //Minhas Configurações
+    //textAlign: 'center',
+    //textAlignVertical: 'center',
+    /*
+    marginTop: 5,
+    marginLeft: 5,
+    marginRight: 5,
+    marginBottom: 5
+    */
+  },
+
+  estilo2:{
+    fontSize: 30,
+    backgroundColor: '#2A48FA',
+    //color: '#FFFFFF',
+    //height: 60,
+    //width: 60,
+    //Minhas Configurações
+    //textAlign: 'center',
+    //textAlignVertical: 'center'    
+  },  
+
+  estiloView:{
+    backgroundColor: 'skyblue',
+    height: 600,
+    justifyContent: 'space-around', // alinha verticamente
+    alignItems: 'stretch', //alinha horizontalmente
+    flexDirection: 'column' //'row'
+  }
