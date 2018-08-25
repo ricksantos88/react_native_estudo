@@ -4,8 +4,15 @@ import { AppRegistry, Text, View , Button , Image } from 'react-native';
 //Formatações 
 const Estilos = {
   principal: {
-    //padding: 40
+    padding: 40
   },
+  imagem:{
+    justifyContent:'flex-end',
+    padding: 5
+  },
+  textoImagem:{
+    backgroundColor:'#FFFFFF'
+  }
 };
 
 //
@@ -13,13 +20,14 @@ const Estilos = {
 //Cria o Componente.
 const app2 = () => {
   
-  const { principal } = Estilos; 
+  const { principal , imagem , textoImagem } = Estilos; 
 
   return(
 
     <View style={ principal }>
-      <Image source={ {uri:'https://i.pinimg.com/originals/5b/de/68/5bde68bcb6cf289c4e4eca036c8da026.jpg'} }
-             style={ {width: 300, height: 400} }/>
+      <Image style={ imagem } source={ require('./imgs/uvas.png') }>
+        <Text style={ textoImagem }>Vicio é foda</Text>
+      </Image>
     </View>
   );
 };
