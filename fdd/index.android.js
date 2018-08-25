@@ -1,45 +1,25 @@
 import React from 'react';
-import { AppRegistry, Text, View , Button , TouchableOpacity } from 'react-native';
+import { AppRegistry, Text, View , Button , Image } from 'react-native';
 
 //Formatações 
 const Estilos = {
   principal: {
-    paddingTop: 40
+    //padding: 40
   },
-  botao:{
-    backgroundColor: '#48BBEC',
-    padding: 10,
-    borderColor: '#1d8eb8',
-    borderWidth: 1,
-    borderRadius: 8,
-    //shadowColor: '#000',
-    //shadowOffSet: {width: 0, height: 2},
-    //shadowOpacity: 0.4
-  }, 
-  textoBotao: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: 'bold',
-    alignSelf: 'center'
-  }
 };
 
 //
-const botaoPressionado = ()=> {
-  alert('Botão Pressionado');
-};
 
 //Cria o Componente.
 const app2 = () => {
   
-  const { principal , botao , textoBotao } = Estilos; 
+  const { principal } = Estilos; 
 
   return(
 
     <View style={ principal }>
-      <TouchableOpacity style={ botao }>
-        <Text style={ textoBotao }>Clique Aqui</Text>
-      </TouchableOpacity>
+      <Image source={ {uri:'https://i.pinimg.com/originals/5b/de/68/5bde68bcb6cf289c4e4eca036c8da026.jpg'} }
+             style={ {width: 300, height: 400} }/>
     </View>
   );
 };
