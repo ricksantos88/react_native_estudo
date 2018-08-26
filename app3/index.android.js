@@ -7,36 +7,30 @@ import {
   Button
 } from 'react-native';
 
-class MeuComponente extends Component {  
-  render(){
-    return(
-      <View>
-          <Text>{this.props.teste}</Text>
-         
-      </View>
-    );
-  };
-};
 
 class app3 extends Component{
 
   constructor(props){
     super(props);
-    this.state = {texto : 'Texto Teste 2222' };
+
+    this.state = {escolhaUsuario: ''}
+
   }
 
-  alteraTexto(){
-    this.setState({texto : 'Outra Coisa'})
+  jokempo(escolhaUsuario){
+    alert(escolhaUsuario);
+    this.setState( {  escolhaUsuario : escolhaUsuario })
   }
 
   render(){
     return(
       <View>
-        <MeuComponente teste={this.state.texto}></MeuComponente>
-        <Button 
-          title='Botão'
-          onPress={() => { this.alteraTexto() }}
-        />
+        <Text>Escolha do Computador</Text>
+        <Text>Escolha do Usuário >>> { this.state.escolhaUsuario }</Text>
+        <Text>Resultado</Text>
+        <Button title='Pedra' onPress={ () => { this.jokempo('Pedra')} }/> 
+        <Button title='Papel'onPress={ () => { this.jokempo('Papel')} }/>
+        <Button title='Tesoura'onPress={ () => { this.jokempo('Tesoura')} }/>
       </View>
     );
   };
