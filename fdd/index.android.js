@@ -1,23 +1,25 @@
 import React from 'react';
-import { AppRegistry, Text, View , TouchableOpacity , Image , Alert } from 'react-native';
+import { AppRegistry, Text, View, TouchableOpacity, Image } from 'react-native';
 
+//Imagem logo
+const logo = require('./imgs/logo.png');
 //Formatações 
 const Estilos = {
 
   principal: {
     flex: 1,
     justifyContent: 'center',
-    alignItems:'center'
+    alignItems: 'center'
   },
 
   botao:{
     backgroundColor: '#538530',
     paddingVertical: 10,
-    paddingHorizontal:40,
+    paddingHorizontal: 40,
     marginTop: 20
   },
 
-  textoBotao:{
+  textoBotao: {
     color: '#FFF',
     fontSize: 16,
     fontWeight: 'bold'
@@ -26,12 +28,12 @@ const Estilos = {
 };
 
 //
-const gerarNovaFrase = () =>{
-  var numeroAleatorio = Math.random();
-  numeroAleatorio =  Math.floor(numeroAleatorio * 13);
+const gerarNovaFrase = () => {
+  let numeroAleatorio = Math.random();
+  numeroAleatorio = Math.floor(numeroAleatorio * 13);
 
   //Frases
-  var frases = Array()
+  const frases = Array()
   frases[0] = 'A esperança é como o sol. Se você apenas acredita quando vê, você nunca vai sobreviver à noite.';
   frases[1] = 'A Força não pertence aos Jedi. Dizer que um Jedi morre, a Força morre, é vaidade.';
   frases[2] = 'É assim que vamos ganhar. Não lutando contra o que odiamos, mas salvando o que amamos.';
@@ -46,25 +48,20 @@ const gerarNovaFrase = () =>{
   frases[11] = 'Que a Força esteja com você.';
   frases[12] = 'Lembre-se: seu foco determina a sua realidade.';
 
-  var fraseEscolhida = frases[ numeroAleatorio ];
-
+  const fraseEscolhida = frases[numeroAleatorio];
   alert(fraseEscolhida);
-
-}
+};
 
 //Cria o Componente.
 const app2 = () => {
-  
-  const { principal , botao , textoBotao } = Estilos; 
+  const { principal, botao, textoBotao } = Estilos; 
 
-  return(
+  return (
 
-    <View style={ principal }>
-      <Image source={ require('./imgs/logo.png') }/>
-      <TouchableOpacity 
-          onPress={gerarNovaFrase}
-          style={ botao }>
-        <Text style={ textoBotao }>Frases Yoda</Text>
+    <View style={principal}>
+      <Image source={logo} />
+      <TouchableOpacity onPress={gerarNovaFrase} style={botao} >
+        <Text style={textoBotao}>Frases Yoda</Text>
       </TouchableOpacity>
     </View>
   );
