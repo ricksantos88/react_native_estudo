@@ -4,7 +4,7 @@ import {
   AppRegistry
 
 } from 'react-native';
-import ListaItems from './src/components/listaItems';
+import ListaItems from './src/components/listaItens';
 
 export default class app4 extends Component {
   render() {

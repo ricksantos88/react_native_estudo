@@ -2,18 +2,18 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text
+  ScrollView
 } from 'react-native';
 
 import axios from 'axios';
-import Item from './itens';
+import Itens from './itens';
 
-export default class ListaItems extends Component {
+export default class ListaItens extends Component {
 
   constructor(props) {
     super(props);
 
-    this.state = { listaItems: [] };
+    this.state = { listaItens: [] };
   }
 
   componentWillMount() {
@@ -22,7 +22,7 @@ export default class ListaItems extends Component {
     //Requisição HTTP
     axios.get(url)
       .then((response) => {
-        this.setState({ listaItems: response.data });
+        this.setState({ listaItens: response.data });
       })
       .catch(() => {
         console.log('Erro ao recuperar informação.');
@@ -31,13 +31,9 @@ export default class ListaItems extends Component {
 
   render() {
     return (
-      <View>
-        { this.state.listaItems.map((item) => {
-          return (
-            <Text key={item.titulo}>{ item.titulo }</Text>
-          );
-        }) }
-      </View>
+      <ScrollView style={{ backgroundColor: '#DDD' }}>
+        { this.state.listaItens.map(item => (<Itens key={item.titulo} props={item} />)) }
+      </ScrollView>
     );
   }
 }
